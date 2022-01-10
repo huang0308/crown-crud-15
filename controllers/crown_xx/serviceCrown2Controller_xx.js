@@ -1,6 +1,18 @@
 const Category_xx = require('../../models/crown_xx/Category_xx');
 const Shop_xx = require('../../models/crown_xx/Shop_xx');
 
+//CREATE
+exports.create = async(body) => {
+  try {
+    return await Shop_xx.create(body);
+  } catch(err){
+    console.log('create',err);
+  } 
+}
+
+
+//READ
+
 exports.getCategories = async (req, res) => {
   try {
     return await Category_xx.fetchAll();

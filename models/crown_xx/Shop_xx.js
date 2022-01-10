@@ -11,6 +11,18 @@ const Shop_xx = class Shop_xx {
 
   }
 
+  //CREATE
+  static async create(body) {
+    const {id,name,cat_id,price,remote_url,local_url} =body;
+    const query = {
+      text:`INSERT INTO shop_xx(id,name,cat_id,price,remote_url,local_url)
+      VALUES ($1,$2,$3,$4,$5,$6)`,
+      values:[id,name,cat_id,price,remote_url,local_url]
+
+    }
+    return db.query(query);
+  }
+
   // get all categories
   static async fetchAll() {
     try {

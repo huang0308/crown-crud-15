@@ -4,7 +4,7 @@ const serviceCrown2Controller_xx = require('./serviceCrown2Controller_xx');
 
 exports.createProducts = async (req, res) => {
   console.log('body',req.body);
-  //res.json('Create body received')
+  res.json('Create body received')
   try{
     let results = await serviceCrown2Controller_xx.create(req.body);
     console.log('results', JSON.stringify(results));
